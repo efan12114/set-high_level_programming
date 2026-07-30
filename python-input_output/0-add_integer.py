@@ -1,9 +1,12 @@
 #!/usr/bin/python3
-"""Module for add_integer function."""
+"""
+Defines an integer addition function.
+"""
 
 
 def add_integer(a, b=98):
-    """Adds two integers.
+    """
+    Adds two integers.
 
     Args:
         a: first integer or float
