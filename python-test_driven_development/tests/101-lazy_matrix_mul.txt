@@ -7,27 +7,39 @@ Using ``lazy_matrix_mul``
 Importing the function:
     >>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
-Standard matrix multiplication:
+Standard 2x2 matrix multiplication:
     >>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
     array([[ 7, 10],
            [15, 22]])
 
-Multiplying 1x2 by 2x2 matrix:
+Multiplying a 1x2 matrix by a 2x2 matrix:
     >>> lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]])
     array([[13, 16]])
 
-Checking multiplication with floats:
+Checking multiplication with float elements:
     >>> lazy_matrix_mul([[1.5, 2.0]], [[3.0], [4.0]])
     array([[12.5]])
 
-Checking TypeError when scalar argument is passed:
-    >>> lazy_matrix_mul(1, [[1, 2]])
+Checking error when m_a is a string:
+    >>> lazy_matrix_mul("not a list", [[1, 2]])
     Traceback (most recent call last):
         ...
-    ValueError: Scalar operands are not allowed, use '*' instead
+    TypeError: ...
 
-Checking ValueError when shapes cannot be multiplied:
+Checking error when m_b is a string:
+    >>> lazy_matrix_mul([[1, 2]], "not a list")
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+Checking error when elements cannot be multiplied (string inside matrix):
+    >>> lazy_matrix_mul([["1", 2]], [[1, 2], [3, 4]])
+    Traceback (most recent call last):
+        ...
+    TypeError: ...
+
+Checking error when matrix dimensions cannot be multiplied:
     >>> lazy_matrix_mul([[1, 2, 3]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
-    ValueError: shapes (1,3) and (2,2) not aligned: 3 (dim 1) != 2 (dim 0)
+    ValueError: ...

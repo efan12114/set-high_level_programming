@@ -10,8 +10,8 @@ def lazy_matrix_mul(m_a, m_b):
     Multiplies two matrices using NumPy.
 
     Args:
-        m_a (list): The first matrix.
-        m_b (list): The second matrix.
+        m_a: The first matrix (list of lists of ints/floats).
+        m_b: The second matrix (list of lists of ints/floats).
 
     Returns:
         ndarray: The matrix result of the multiplication.
