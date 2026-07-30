@@ -20,19 +20,19 @@ Checking multiplication with float elements:
     >>> lazy_matrix_mul([[1.5, 2.0]], [[3.0], [4.0]])
     array([[12.5]])
 
-Checking error when m_a is a string:
+Checking error when m_a is not a list/matrix:
     >>> lazy_matrix_mul("not a list", [[1, 2]])
     Traceback (most recent call last):
         ...
-    TypeError: ...
+    ValueError: ...
 
-Checking error when m_b is a string:
+Checking error when m_b is not a list/matrix:
     >>> lazy_matrix_mul([[1, 2]], "not a list")
     Traceback (most recent call last):
         ...
-    TypeError: ...
+    ValueError: ...
 
-Checking error when elements cannot be multiplied (string inside matrix):
+Checking error when elements cannot be multiplied:
     >>> lazy_matrix_mul([["1", 2]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
         ...
