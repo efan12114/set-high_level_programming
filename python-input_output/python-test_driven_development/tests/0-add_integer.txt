@@ -1,0 +1,30 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+---------------------
+
+Importing the function:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Checking normal addition with integers:
+    >>> add_integer(1, 2)
+    3
+
+Checking negative numbers:
+    >>> add_integer(1, -2)
+    -1
+
+Checking default value for b (98):
+    >>> add_integer(2)
+    100
+
+Checking float inputs (integer casting):
+    >>> add_integer(1.4, 2)
+    3
+
+Checking invalid type for b (string):
+    >>> add_integer(1, "2")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
